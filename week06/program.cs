@@ -50,7 +50,7 @@ public class EternalGoal : Goal
 
     public override void DisplayStatus()
     {
-        Console.WriteLine($"[ ] {Name}: {Points} points");
+        Console.WriteLine($"[ ] {Name}: {Points} points (Eternal goals cannot be marked as complete)");
     }
 }
 
@@ -148,7 +148,6 @@ public class Program
     {
         User user = new User();
 
-
         user.CreateGoal("simple", "Run a Marathon");
         user.CreateGoal("eternal", "Read Scriptures");
         user.CreateGoal("checklist", "Attend the Temple", 10, 500);
@@ -160,7 +159,6 @@ public class Program
         user.DisplayGoals();
         Console.WriteLine($"Total Score: {user.Score}");
 
-    
         user.SaveProgress("userProgress.dat");
         User loadedUser = User.LoadProgress("userProgress.dat");
         loadedUser.DisplayGoals();
